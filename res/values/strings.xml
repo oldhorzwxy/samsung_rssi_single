@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sumsung_Single_RssiRecorder</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- searching activity -->
+    <string name="searching_status">Ready to search.</string>
+    <string name="searching_start">start</string>
+    <string name="searching_stop">stop</string>
+    <string name="quit">quit</string>
+    <string name="searching_distance">input distance</string>
+    <string name="searching_name">input name</string>
+
+</resources>
