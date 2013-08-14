@@ -5,47 +5,92 @@
               android:orientation="vertical"
               tools:context=".SearchingActivity" >
 
-    <TextView
-            android:id="@+id/searching_status"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:text="@string/searching_status" />
-
-    <Button
-            android:id="@+id/searching_start"
+    <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/searching_start" />
+            android:id="@+id/scrollView"
+            android:layout_gravity="center">
 
-    <Button
-            android:id="@+id/searching_stop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/searching_stop" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <EditText
-            android:id="@+id/input_name"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="@string/searching_name"/>
+            <TextView
+                    android:id="@+id/searching_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:text="@string/searching_status" />
 
-    <EditText
-        android:id="@+id/input_distence"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="@string/searching_distance"/>
+            <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
 
-    <Button
-            android:id="@+id/searching_quit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/quit" />
+                <Button
+                        android:id="@+id/searching_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/searching_start" />
 
-    <ListView
-            android:id="@+id/searching_device_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+                <Button
+                        android:id="@+id/searching_stop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/searching_stop" />
+
+                <Button
+                        android:id="@+id/searching_enable_clock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/searching_enable_clock"/>
+
+                <Button
+                        android:id="@+id/searching_quit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quit" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                <EditText
+                        android:id="@+id/input_name"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:hint="@string/searching_name"
+                        android:text="@string/searching_name_value"/>
+
+                <EditText
+                        android:id="@+id/input_distence"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:hint="@string/searching_distance"
+                        android:text="@string/searching_distance_value"/>
+
+                <EditText
+                        android:id="@+id/input_clock"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:hint="@string/searching_clock"
+                        android:text="@string/searching_clock_value"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/searching_graph_board"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
