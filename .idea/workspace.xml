@@ -21,6 +21,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CompilerWorkspaceConfiguration">
     <option name="USE_COMPILE_SERVER" value="false" />
   </component>
@@ -77,38 +82,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="16" selection-start="549" selection-end="549" vertical-scroll-proportion="0.10176125" vertical-offset="270" max-vertical-offset="851">
+            <state line="24" column="0" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="851">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SingleSearchingActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SingleSearchingActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/navior/tool/sumsungblerecsingle/SingleSearchingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="24" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12742">
+            <state line="370" column="27" selection-start="12798" selection-end="12798" vertical-scroll-proportion="0.5453048" vertical-offset="8179" max-vertical-offset="16054">
               <folding>
-                <element signature="e#2036#3536#0" expanded="true" />
-                <element signature="e#3020#3032#0" expanded="true" />
-                <element signature="e#3255#3434#0" expanded="true" />
-                <element signature="e#3423#3424#0" expanded="true" />
-                <element signature="e#3531#3532#0" expanded="true" />
-                <element signature="e#5541#5641#0" expanded="true" />
-                <element signature="e#5634#5635#0" expanded="true" />
-                <element signature="e#5796#5897#0" expanded="true" />
-                <element signature="e#5890#5891#0" expanded="true" />
-                <element signature="e#5969#6436#0" expanded="true" />
-                <element signature="e#6429#6430#0" expanded="true" />
-                <element signature="e#6503#6628#0" expanded="true" />
-                <element signature="e#6621#6622#0" expanded="true" />
-                <element signature="e#13586#13597#0" expanded="true" />
-                <element signature="e#14428#14439#0" expanded="true" />
-                <element signature="e#16467#16478#0" expanded="true" />
-                <element signature="e#18523#18534#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2080#3537#0" expanded="true" />
+                <element signature="e#3031#3043#0" expanded="true" />
+                <element signature="e#3259#3436#0" expanded="true" />
+                <element signature="e#3425#3426#0" expanded="true" />
+                <element signature="e#3532#3533#0" expanded="true" />
+                <element signature="e#5560#5752#0" expanded="true" />
+                <element signature="e#5745#5746#0" expanded="true" />
+                <element signature="e#5905#6006#0" expanded="true" />
+                <element signature="e#5999#6000#0" expanded="true" />
+                <element signature="e#6077#6527#0" expanded="true" />
+                <element signature="e#6520#6521#0" expanded="true" />
+                <element signature="e#6593#6718#0" expanded="true" />
+                <element signature="e#6711#6712#0" expanded="true" />
+                <element signature="e#8539#9035#0" expanded="true" />
+                <element signature="e#8826#9003#0" expanded="true" />
+                <element signature="e#8988#8989#0" expanded="true" />
+                <element signature="e#9026#9027#0" expanded="true" />
+                <element signature="e#12735#12744#0" expanded="true" />
+                <element signature="e#13028#13037#0" expanded="true" />
+                <element signature="e#13554#13563#0" expanded="true" />
+                <element signature="e#20321#20330#0" expanded="true" />
+                <element signature="e#22360#22369#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="814" selection-end="814" vertical-scroll-proportion="-10.64" vertical-offset="194" max-vertical-offset="598">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -157,12 +177,15 @@
         <option value="$PROJECT_DIR$/src/cn/naviro/tool/sumsungblerecsingle/SingleSearchingActivity.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/cn/navior/tool/sumsungblerecsingle/RecordItem.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/cn/navior/tool/sumsungblerecsingle/MyMathematicalMachine.java" />
         <option value="$PROJECT_DIR$/res/layout/activity_single_searching.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/cn/navior/tool/sumsungblerecsingle/SingleSearchingActivity.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-4" />
@@ -225,7 +248,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sumsungblerecsingle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SumsungBleRecSingle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SumsungBleRecSingle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SumsungBleRecSingle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SumsungBleRecSingle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,7 +490,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="1058" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -443,13 +502,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40662983" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28618786" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.7679558" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928178" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15741728" sideWeight="0.59337014" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.7679558" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15741728" sideWeight="0.7138122" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5801105" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -546,23 +605,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="27" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="3841">
           <folding>
-            <element signature="e#2036#3536#0" expanded="true" />
-            <element signature="e#3020#3032#0" expanded="true" />
-            <element signature="e#3255#3434#0" expanded="true" />
-            <element signature="e#3423#3424#0" expanded="true" />
-            <element signature="e#3531#3532#0" expanded="true" />
-            <element signature="e#5541#5641#0" expanded="true" />
-            <element signature="e#5634#5635#0" expanded="true" />
-            <element signature="e#5796#5897#0" expanded="true" />
-            <element signature="e#5890#5891#0" expanded="true" />
-            <element signature="e#5969#6436#0" expanded="true" />
-            <element signature="e#6429#6430#0" expanded="true" />
-            <element signature="e#6503#6628#0" expanded="true" />
-            <element signature="e#6621#6622#0" expanded="true" />
-            <element signature="e#13586#13597#0" expanded="true" />
-            <element signature="e#14428#14439#0" expanded="true" />
-            <element signature="e#16467#16478#0" expanded="true" />
-            <element signature="e#18523#18534#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2080#3537#0" expanded="true" />
+            <element signature="e#3031#3043#0" expanded="true" />
+            <element signature="e#3259#3436#0" expanded="true" />
+            <element signature="e#3425#3426#0" expanded="true" />
+            <element signature="e#3532#3533#0" expanded="true" />
+            <element signature="e#5560#5752#0" expanded="true" />
+            <element signature="e#5745#5746#0" expanded="true" />
+            <element signature="e#5905#6006#0" expanded="true" />
+            <element signature="e#5999#6000#0" expanded="true" />
+            <element signature="e#6077#6527#0" expanded="true" />
+            <element signature="e#6520#6521#0" expanded="true" />
+            <element signature="e#6593#6718#0" expanded="true" />
+            <element signature="e#6711#6712#0" expanded="true" />
+            <element signature="e#8539#9035#0" expanded="true" />
+            <element signature="e#8826#9003#0" expanded="true" />
+            <element signature="e#8988#8989#0" expanded="true" />
+            <element signature="e#9026#9027#0" expanded="true" />
+            <element signature="e#12735#12744#0" expanded="true" />
+            <element signature="e#13028#13037#0" expanded="true" />
+            <element signature="e#13554#13563#0" expanded="true" />
+            <element signature="e#20321#20330#0" expanded="true" />
+            <element signature="e#22360#22369#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -580,13 +645,6 @@
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="52" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="437">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="45" selection-start="790" selection-end="790" vertical-scroll-proportion="-15.64" vertical-offset="0" max-vertical-offset="598">
           <folding />
         </state>
       </provider>
@@ -635,35 +693,48 @@
         <state line="6" column="22" selection-start="164" selection-end="164" vertical-scroll-proportion="0.23908524" vertical-offset="0" max-vertical-offset="8648" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/navior/tool/sumsungblerecsingle/SingleSearchingActivity.java">
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="420" selection-end="420" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12742">
-          <folding>
-            <element signature="e#2036#3536#0" expanded="true" />
-            <element signature="e#3020#3032#0" expanded="true" />
-            <element signature="e#3255#3434#0" expanded="true" />
-            <element signature="e#3423#3424#0" expanded="true" />
-            <element signature="e#3531#3532#0" expanded="true" />
-            <element signature="e#5541#5641#0" expanded="true" />
-            <element signature="e#5634#5635#0" expanded="true" />
-            <element signature="e#5796#5897#0" expanded="true" />
-            <element signature="e#5890#5891#0" expanded="true" />
-            <element signature="e#5969#6436#0" expanded="true" />
-            <element signature="e#6429#6430#0" expanded="true" />
-            <element signature="e#6503#6628#0" expanded="true" />
-            <element signature="e#6621#6622#0" expanded="true" />
-            <element signature="e#13586#13597#0" expanded="true" />
-            <element signature="e#14428#14439#0" expanded="true" />
-            <element signature="e#16467#16478#0" expanded="true" />
-            <element signature="e#18523#18534#0" expanded="true" />
-          </folding>
+        <state line="24" column="0" selection-start="961" selection-end="961" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="851">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="549" selection-end="549" vertical-scroll-proportion="0.10176125" vertical-offset="270" max-vertical-offset="851">
+        <state line="20" column="0" selection-start="814" selection-end="814" vertical-scroll-proportion="-10.64" vertical-offset="194" max-vertical-offset="598">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cn/navior/tool/sumsungblerecsingle/SingleSearchingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="370" column="27" selection-start="12798" selection-end="12798" vertical-scroll-proportion="0.5453048" vertical-offset="8179" max-vertical-offset="16054">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2080#3537#0" expanded="true" />
+            <element signature="e#3031#3043#0" expanded="true" />
+            <element signature="e#3259#3436#0" expanded="true" />
+            <element signature="e#3425#3426#0" expanded="true" />
+            <element signature="e#3532#3533#0" expanded="true" />
+            <element signature="e#5560#5752#0" expanded="true" />
+            <element signature="e#5745#5746#0" expanded="true" />
+            <element signature="e#5905#6006#0" expanded="true" />
+            <element signature="e#5999#6000#0" expanded="true" />
+            <element signature="e#6077#6527#0" expanded="true" />
+            <element signature="e#6520#6521#0" expanded="true" />
+            <element signature="e#6593#6718#0" expanded="true" />
+            <element signature="e#6711#6712#0" expanded="true" />
+            <element signature="e#8539#9035#0" expanded="true" />
+            <element signature="e#8826#9003#0" expanded="true" />
+            <element signature="e#8988#8989#0" expanded="true" />
+            <element signature="e#9026#9027#0" expanded="true" />
+            <element signature="e#12735#12744#0" expanded="true" />
+            <element signature="e#13028#13037#0" expanded="true" />
+            <element signature="e#13554#13563#0" expanded="true" />
+            <element signature="e#20321#20330#0" expanded="true" />
+            <element signature="e#22360#22369#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
