@@ -47,6 +47,7 @@ public class SingleSearchingActivity extends Activity {
   // tools
   private Thread clock;
   private PrintWriter writer;
+  private PrintWriter statWriter;
   private Handler handler;
   private HashMap<Integer, ArrayList<RecordItem>> recordsOnGraph;
   private ArrayList<RecordItem> tempRecords;  // temporary record storage
@@ -143,6 +144,12 @@ public class SingleSearchingActivity extends Activity {
     // stop-searching button
     stopButton.setOnClickListener(new View.OnClickListener() {
       public void onClick(View v) {
+        // create the time string
+        SimpleDateFormat tempDate = new SimpleDateFormat("yyyy-MM-dd-kk-mm-ss", Locale.ENGLISH);
+        String datetime = tempDate.format(new java.util.Date());
+        // close statistic writer
+        statWriter.write("stop time,"+ datetime);
+        statWriter.close();
         if (clock != null) {
           clock.interrupt();
           clock = null;
@@ -154,6 +161,37 @@ public class SingleSearchingActivity extends Activity {
     // start-searching button
     startButton.setOnClickListener(new View.OnClickListener() {
       public void onClick(View v) {
+        // record the statistic results into a file
+        // create directory
+        File directory = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "sumsung_rssirec_single_stat");
+        if (!directory.exists()) {
+          directory.mkdir();
+        }
+
+        // create the time string
+        SimpleDateFormat tempDate = new SimpleDateFormat("yyyy-MM-dd-kk-mm-ss", Locale.ENGLISH);
+        String datetime = tempDate.format(new java.util.Date());
+
+        // create the file
+        File recordFile = new File(directory.getAbsolutePath() + "/" + datetime + ".txt");
+        if (recordFile.exists()) {
+          recordFile.delete();
+        }
+
+        // open writer
+        try {
+          statWriter = new PrintWriter(recordFile);
+          statWriter.write("Device name," + mBluetoothAdapter.getName() + "\n");
+          statWriter.write("Device address," + mBluetoothAdapter.getAddress() + "\n");
+          statWriter.write("Discovered device name," + nameInput.getEditableText().toString());
+          statWriter.write("Discovered device distance," + distanceInput.getEditableText().toString());
+          statWriter.write("clock," + clockInput.getEditableText().toString());
+          statWriter.write("start," + datetime + "\n");
+          statWriter.write("id,ave,2pk,ave2pk,str3,ave3,middle\n");
+        } catch (FileNotFoundException e) {
+          e.printStackTrace();
+        }
+
         onStartScan();
       }
     });
@@ -322,8 +360,8 @@ public class SingleSearchingActivity extends Activity {
       writer = new PrintWriter(recordFile);
       writer.write("Device name," + mBluetoothAdapter.getName() + "\n");
       writer.write("Device address," + mBluetoothAdapter.getAddress() + "\n");
-      writer.write("Discovered device name," + nameInput.getEditableText().toString());
-      writer.write("Discovered device distance," + distanceInput.getEditableText().toString());
+      writer.write("Discovered device name," + nameInput.getEditableText().toString() + "\n");
+      writer.write("Discovered device distance," + distanceInput.getEditableText().toString() + "\n");
       writer.write("start," + datetime + "\n");
       writer.write("distance,rssi,time\n");
     } catch (FileNotFoundException e) {
@@ -366,6 +404,26 @@ public class SingleSearchingActivity extends Activity {
   }
 
   private void showStatisticResults() {
+    // get first half
+    /*Iterator< ArrayList< RecordItem > > iterator = recordsOnGraph.values().iterator();
+    int size = 0;
+    while( iterator.hasNext() ) {
+      size += iterator.next().size();
+    }
+    HashMap< Integer, ArrayList< RecordItem > > half = new HashMap<Integer, ArrayList<RecordItem> >();
+    TreeSet<Integer> keys2 = new TreeSet<Integer>(recordsOnGraph.keySet());
+    int max = keys2.pollLast();
+    int halfValue = 0;
+    while( half.values().size() + recordsOnGraph.get( max ).size() <= size / 2 ) {
+      half.put( max, recordsOnGraph.get( max ) );
+      halfValue += recordsOnGraph.get( max ).size();
+      if( keys2.size() == 0 ) {
+        break;
+      }
+      max = keys2.pollLast();
+    }
+    recordsOnGraph = half;*/
+
     // get first and last value
     TreeSet<Integer> keys = new TreeSet<Integer>(recordsOnGraph.keySet());
     if (keys.size() >= 2) {
@@ -391,23 +449,32 @@ public class SingleSearchingActivity extends Activity {
       }
       final int average = (int) MyMathematicalMachine.getArithmeticAverage(rssiList);
       // get the standard derivation
-      double sd = MyMathematicalMachine.getStandardDeviation(rssiList);
-      sd = ((int) (sd * 100)) / 100.0;
+      //double sd = MyMathematicalMachine.getStandardDeviation(rssiList);
+      //sd = ((int) (sd * 100)) / 100.0;
       // get two peaks
       int firstPeak = 0;  // the weakest peak
       for (int i = 1; i <= lastValue - firstValue + 1; i++) {
         if (sizeArray.get(i) >= sizeArray.get(i - 1)
-            && sizeArray.get(i) > sizeArray.get(i + 1)) {
-          firstPeak = firstValue + (i - 1);
-          break;
+              && sizeArray.get(i) > sizeArray.get(i + 1)) {
+            firstPeak = firstValue + (i - 1);
+            break;
         }
       }
-      int lastPeak = 0;  // the weakest peak
+      int lastPeak = 0;  // the strongest peak
+      boolean foundLastValley = false; // I'm looking for last peak which lies after last valley
       for (int i = lastValue - firstValue + 1; i >= 1; i--) {
-        if (sizeArray.get(i) >= sizeArray.get(i + 1)
-            && sizeArray.get(i) > sizeArray.get(i - 1)) {
-          lastPeak = firstValue + (i - 1);  // yes, it's right, using firstValue to compute lastPeak
-          break;
+        if( foundLastValley ) {
+          if (sizeArray.get(i) >= sizeArray.get(i + 1)
+              && sizeArray.get(i) > sizeArray.get(i - 1)) {
+            lastPeak = firstValue + (i - 1);  // yes, it's right, using firstValue to compute lastPeak
+            break;
+          }
+        }
+        else {
+          if( sizeArray.get( i ) <= sizeArray.get( i - 1 )
+              && sizeArray.get( i ) <= sizeArray.get( i + 1 ) ) {
+            foundLastValley = true;
+          }
         }
       }
       // there is a special condition: the peaks group into one
@@ -462,22 +529,48 @@ public class SingleSearchingActivity extends Activity {
       firstStrongest = firstValue + firstSIndex - 1;
       secondStrongest = firstValue + secondSIndex - 1;
       thirdStrongest = firstValue + thirdSIndex - 1;
-      // get average for two peaks
-      int ave2 = (firstPeak + lastPeak) / 2;
-      // get average for three peaks
-      int ave3 = (firstPeak + lastPeak + thirdPeak) / 3;
+      // get average for first two peaks
+      int ave2 = (lastPeak + thirdPeak) / 2;
+      // get average for two strongest of the three most
+      int ave3 = 0;
+      if( firstStrongest <= secondStrongest && firstStrongest <= thirdStrongest ) {
+        ave3 = ( secondStrongest + thirdStrongest ) / 2;
+      }
+      else if( secondStrongest <= firstStrongest && secondStrongest <= thirdStrongest ) {
+        ave3 = ( firstStrongest + thirdStrongest ) / 2;
+      }
+      else {
+        ave3 = ( firstStrongest + secondStrongest ) / 2;
+      }
+      // get the middle of the keys
+      Iterator< Integer > iterator = keys.descendingIterator();
+      int middle = 0;
+      if( keys.size() % 2 != 0 ) {
+        for( int i = 0; i < keys.size() / 2; i++ ) {
+          iterator.next();
+        }
+        middle = iterator.next();
+      }
+      else {
+        for( int i = 0; i < keys.size() / 2 - 1; i++ ) {
+          iterator.next();
+        }
+        middle = ( iterator.next() + iterator.next() ) / 2;
+      }
       // add the data into the table
       TableRow row = new TableRow(SingleSearchingActivity.this);
       totalStat.addBlock(searchid + "", row);
       totalStat.addBlock(average + "", row);
-      totalStat.addBlock(lastPeak + ";" + firstPeak + "", row);
-      totalStat.addBlock(thirdPeak + "", row);
-      totalStat.addBlock(firstStrongest + ";" + secondStrongest + ";" + thirdStrongest + "", row);
+      totalStat.addBlock(lastPeak + ";" + thirdPeak + "", row);
       totalStat.addBlock(ave2 + "", row);
+      totalStat.addBlock(firstStrongest + ";" + secondStrongest + ";" + thirdStrongest + "", row);
       totalStat.addBlock(ave3 + "", row);
-      totalStat.addBlock(lastValue - firstValue + "", row);
-      totalStat.addBlock(sd + "", row);
+      totalStat.addBlock(middle + "", row);
+      //totalStat.addBlock(sd + "", row);
       totalStat.addView(row);
+
+      statWriter.write("" + searchid + "," + average + "," + lastPeak + ";" + thirdPeak + "," + ave2 + "," + firstStrongest + ";" + secondStrongest
+      + ";" + thirdStrongest + "," + ave3 + "," + middle + "\n" );
     }
 
     /*resultStat.post( new Runnable() {
@@ -613,6 +706,8 @@ public class SingleSearchingActivity extends Activity {
     private final static int BASE_X = 20;
     private final static int BASE_Y = 20;
     private final static int MARGIN_X = 50;
+    private final static int GAP = 20;
+    private final static int WIDTH = 50;
     private int gap;
     private int width;
     private int amplifier;
@@ -627,6 +722,8 @@ public class SingleSearchingActivity extends Activity {
 
     protected void onDraw(Canvas canvas) {
       super.onDraw(canvas);
+      gap = GAP;
+      width = WIDTH;
       // draw the graph
       TreeSet<Integer> keys = new TreeSet<Integer>(recordsOnGraph.keySet());
       if (!keys.isEmpty() && keys.size() >= 2) {
@@ -674,12 +771,10 @@ public class SingleSearchingActivity extends Activity {
       addBlock("id\t\t", titleBar);
       addBlock("ave\t\t", titleBar);
       addBlock("2pk\t\t\t\t\t\t", titleBar);
-      addBlock("3pk\t\t", titleBar);
-      addBlock("fst3\t\t\t\t\t\t", titleBar);
-      addBlock("ave2\t\t", titleBar);
-      addBlock("ave3\t\t", titleBar);
-      addBlock("md\t\t", titleBar);
-      addBlock("sd\t\t", titleBar);
+      addBlock("ave2pk\t\t", titleBar);
+      addBlock("3str\t\t\t\t\t\t", titleBar);
+      addBlock("ave3str\t\t", titleBar);
+      addBlock("middle\t\t", titleBar);
       addView(titleBar);
     }
 
