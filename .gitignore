@@ -3,3 +3,7 @@ gen/
 out/
 proguard-project.txt
 project.properties
+.idea
+.setting
+.project
+.classpath
